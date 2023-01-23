@@ -1,0 +1,68 @@
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3rem;
+  outline: 2px solid;
+  margin-bottom: 1rem;
+  padding-inline: 1rem;
+}
+
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+
+.topics-container {
+  display: flex;
+  flex: .7;
+  outline:2px solid red;
+}
+.topics-container ul {
+  list-style: none;
+  width: 100%;
+}
+
+.topics-container ul li {
+  padding: .4rem 1rem;
+  margin:.4rem  0;
+
+}
+
+
+.main-container {
+  display: flex;
+  flex: auto;
+  gap: 1rem;
+  flex-direction: column;
+  outline: 2px solid;
+}
+
+
+.rooms-container-header {
+  display: flex;
+}
+
+.rooms-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashbord {
+  flex: .7;
+}
+
+.room {
+  width: 100%;
+  outline: 2px solid;
+
+}

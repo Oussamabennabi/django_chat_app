@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+  {% block content %}
+
+  <form method="POST">
+    {% csrf_token %}
+    <label>
+      <span>Username:</span>
+
+      <input required   type="text" name="username" placeholder="Username">
+    </label>
+    <label >
+      <span>Password:</span>
+      <input      required type="password" name="password" placeholder="Password">
+    </label>
+    <button type="submit">Submit</button>
+    
+    
+  </form>
+  <small>Haven't Signed up Yet?</small>
+
+  <button type="submit"><a href="/register">Register</a></button>
+
+  {% endblock content %}
+

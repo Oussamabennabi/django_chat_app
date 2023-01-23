@@ -1,0 +1,34 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="main">
+    <aside class="topics-container">{% include './topics_sidebar.html' %}</aside>
+
+    <div class="main-container">
+        <div class="rooms-container-header">
+            <a href="/create-room">create room</a>
+        </div>
+        <div class="rooms-container">
+            {% for room in rooms %}
+            <div class="room">
+                {% if request.user == room.host  %}
+                <a href="update-room/{{room.id}}">Edit</a>
+                <a href="delete-room/{{room.id}}">Delete</a>
+                {% endif %}
+                <p>@{{room.host.username}}</p>
+                <a href="room/{{room.id}}">
+                    <h1>{{room.name}}</h1>
+                </a>
+                <small>{{room.topic.name}}</small>
+            </div>
+    
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="dashbord">
+
+    </div>
+
+</div>
+
+{% endblock content %}
