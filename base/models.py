@@ -1,6 +1,19 @@
 from django.db import models
 import uuid
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+
+# idididididi
+class User(AbstractUser):
+    username = models.CharField(max_length=200, null=True)
+    fullname = models.CharField(max_length=200, null=True)
+    email = models.EmailField(unique=True, null=True)
+    bio = models.TextField(null=True,blank=True)
+
+    avatar = models.ImageField(null=True, default="avatar.svg")
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+    pass
 
 
 class Topic(models.Model):
@@ -19,7 +32,8 @@ class Room(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     # we add related_name atribute because we can not refrence the User twice thats why we need to change the name for participants for avoiding conflicts 
-    participants = models.ManyToManyField(User,related_name='participants')
+    participants = models.ManyToManyField(
+        User, related_name='participants', blank=True)
 
     
     def __str__(self):

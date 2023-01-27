@@ -1,24 +1,25 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-        <title>Discord</title>
-    </head>
-    <body>
-        <div class="notification">
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+        <link
+            rel="shortcut icon"
+            href="{% static 'images/logo.png' %}"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script defer src="{% static 'js/script.js' %}"></script>
 
+        <title>Let's study - Find study partners around the world!</title>
+    </head>
+
+    <body>
+
+        
         {% include 'navbar.html' %} {% block content %} {% endblock content %}
     </body>
 </html>
